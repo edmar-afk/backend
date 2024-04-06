@@ -31,3 +31,15 @@ class Comments(models.Model):
     
     class Meta:
         verbose_name = "Comment"
+        
+
+class Visit(models.Model):
+    user_identifier = models.CharField(max_length=100, unique=True)
+    visit_count = models.IntegerField(default=0)
+    visited_today = models.BooleanField(default=True)
+    
+
+class Like(models.Model):
+    session_key = models.CharField(max_length=255, null=True, blank=True)
+    ip_address = models.CharField(max_length=50)
+    clicked = models.BooleanField(default=False)
