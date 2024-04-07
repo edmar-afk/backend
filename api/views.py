@@ -9,6 +9,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework import viewsets
 from django.http import JsonResponse
 from django.db.models import Sum
+import uuid
 # Create your views here.
 
 class ProductViewSet(viewsets.ModelViewSet): 
@@ -27,15 +28,17 @@ class VisitViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
     
     def create(self, request):
-        user_identifier = request.META.get('REMOTE_ADDR')  # Example: Using IP address for identification
-        try:
-            visit = Visit.objects.get(user_identifier=user_identifier)
-            visit.visit_count += 1
-            visit.save()
-        except Visit.DoesNotExist:
-            visit = Visit.objects.create(user_identifier=user_identifier, visit_count=1)
-        serializer = VisitorSerializer(visit)
-        return Response(serializer.data)
+        ip_address = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR'))
+        user_agent = request.META.get('HTTP_USER_AGENT', '')
+        
+        existing_visit = Visit.objects.filter(ip_address=ip_address, user_agent=user_agent).first()
+
+        if existing_visit:
+            return Response({'status': 'failure', 'message': 'User already visited the website'})
+        else:
+            new_visit = Visit.create(ip_address=ip_address, user_agent=user_agent)
+            new_visit.save()
+            return Response({'status': 'success', 'message': 'Website visited'})
 
 
 
@@ -45,19 +48,18 @@ class LikeViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
     
     def create(self, request):
-        if not request.session.session_key:
-            request.session.save()
-        session_key = request.session.session_key
-        ip_address = request.META.get('REMOTE_ADDR')
-
-        # Check if the user has already liked the page
-        existing_like = Like.objects.filter(ip_address=ip_address).first()
+        ip_address = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR'))
+        user_agent = request.META.get('HTTP_USER_AGENT', '')
+        
+        existing_like = Like.objects.filter(ip_address=ip_address, user_agent=user_agent).first()
 
         if existing_like:
             return Response({'status': 'failure', 'message': 'User already liked the page'})
         else:
-            Like.objects.create(ip_address=ip_address)
+            new_like = Like.create(ip_address=ip_address, user_agent=user_agent)
+            new_like.save()
             return Response({'status': 'success', 'message': 'Page liked'})
+        
 
     @action(detail=False, methods=['delete'])
     def delete_latest(self, request):

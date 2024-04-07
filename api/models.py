@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.validators import FileExtensionValidator
-
+import uuid
 now = timezone.now()
 currentDate = now.date()
 
@@ -34,12 +34,24 @@ class Comments(models.Model):
         
 
 class Visit(models.Model):
-    user_identifier = models.CharField(max_length=100, unique=True)
-    visit_count = models.IntegerField(default=0)
-    visited_today = models.BooleanField(default=True)
+    ip_address = models.GenericIPAddressField()
+    user_agent = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    anonymous_uuid = models.UUIDField(null=True, blank=True, unique=True)
+
+    @classmethod
+    def create(cls, ip_address, user_agent):
+        anonymous_uuid = uuid.uuid4()
+        return cls(ip_address=ip_address, user_agent=user_agent, anonymous_uuid=anonymous_uuid)
     
 
 class Like(models.Model):
-    session_key = models.CharField(max_length=255, null=True, blank=True)
-    ip_address = models.CharField(max_length=50)
-    clicked = models.BooleanField(default=False)
+    ip_address = models.GenericIPAddressField()
+    user_agent = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    anonymous_uuid = models.UUIDField(null=True, blank=True, unique=True)
+    
+    @classmethod
+    def create(cls, ip_address, user_agent):
+        anonymous_uuid = uuid.uuid4()
+        return cls(ip_address=ip_address, user_agent=user_agent, anonymous_uuid=anonymous_uuid)
