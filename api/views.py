@@ -10,6 +10,7 @@ from rest_framework import viewsets
 from django.http import JsonResponse
 from django.db.models import Sum
 import uuid
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 class ProductViewSet(viewsets.ModelViewSet): 
@@ -63,7 +64,13 @@ class LikeViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['delete'])
     def delete_latest(self, request):
-        latest_like = Like.objects.latest('id')  # Assuming id is auto-incrementing
-        latest_like.delete()
-        return Response(status=204)
+        ip_address = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR'))
+        user_agent = request.META.get('HTTP_USER_AGENT', '')
+        
+        try:
+            like_to_delete = Like.objects.filter(ip_address=ip_address, user_agent=user_agent).latest('id')
+            like_to_delete.delete()
+            return Response(status=204)
+        except ObjectDoesNotExist:
+            return Response({'status': 'failure', 'message': 'No like found to delete'}, status=404)
     
