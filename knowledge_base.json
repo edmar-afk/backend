@@ -52,10 +52,7 @@
       "question": "hello good afternoon mate",
       "answer": "Good afternoon"
     },
-    {
-      "question": "how's your day?",
-      "answer": "As your personal healthcare companion. Thank you for asking about my day. As an artificial intelligence, I don't experience emotions or have personal experiences, so I don't have a 'day' in the same way humans do. However, I am always ready and available to assist you with any health-related concerns or provide information you may need. How can I assist you today?"
-    },
+    
     {
       "question": "Good day, mate",
       "answer": "Good day to you too! How can I assist you today?"
@@ -63,42 +60,6 @@
     {
       "question": "bye",
       "answer": "Goodbye! If you have any more questions in the future, feel free to ask. Have a great day!"
-    },
-    {
-      "question": "I mean WHO ARE YOU?",
-      "answer": "I'm Baymax, your healthcare assistant."
-    },
-    {
-      "question": "who",
-      "answer": "I'm Baymax, your healthcare assistant."
-    },
-    {
-      "question": "who are you?",
-      "answer": "I'm Baymax, your healthcare assistant."
-    },
-    {
-      "question": "who you are?",
-      "answer": "I'm Baymax, your healthcare assistant."
-    },
-    {
-      "question": "Ow",
-      "answer": "I was alerted to the need for medical attention when you said, Ow"
-    },
-    {
-      "question": "exit",
-      "answer": "& C:/Users/pc/AppData/Local/Programs/Python/Python311/python.exe f:/WORKS/project_baymax/main.py"
-    },
-    {
-      "question": "owwwwwwwwww",
-      "answer": "I was alerted to the need for medical attention when you said, Ow"
-    },
-    {
-      "question": "& C:/Users/pc/AppData/Local/Programs/Python/Python311/python.exe f:/WORKS/project_baymax/main.py",
-      "answer": "& C:/Users/pc/AppData/Local/Programs/Python/Python311/python.exe f:/WORKS/project_baymax/main.py"
-    },
-    {
-      "question": "OOWWWWWW",
-      "answer": "I was alerted to the need for medical attention when you said, Ow"
     },
     {
       "question": "Cool",
@@ -111,10 +72,6 @@
     {
       "question": "secret",
       "answer": "imo mama secret"
-    },
-    {
-      "question": "kaela ka aljane?",
-      "answer": "wala"
     }
   ]
 }
