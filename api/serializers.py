@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 from .models import Products, Comments, Visit, Like
-
+from rest_framework import serializers
 class ProductSerializer(ModelSerializer):
     class Meta:
         model = Products
@@ -20,3 +20,7 @@ class LikeSerializer(ModelSerializer):
     class Meta:
         model = Like
         fields = '__all__'
+        
+        
+class ChatbotSerializer(serializers.Serializer):
+    question = serializers.CharField()

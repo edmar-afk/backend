@@ -1,0 +1,120 @@
+{
+  "questions": [
+    {
+      "question": "What is the color of the sky?",
+      "answer": "Blue"
+    },
+    {
+      "question": "how are you",
+      "answer": "I'm doing great!"
+    },
+    {
+      "question": "How are you doing mate?",
+      "answer": "I'm doing good"
+    },
+    {
+      "question": "What's up?^",
+      "answer": "Not much, what about you?"
+    },
+    {
+      "question": "Where can I subscribe?",
+      "answer": "Idk, subscribe to what?"
+    },
+    {
+      "question": "Say something funny",
+      "answer": "Your love life"
+    },
+    {
+      "question": "tell me more",
+      "answer": "I don't want to"
+    },
+    {
+      "question": "ok",
+      "answer": "ok?"
+    },
+    {
+      "question": "hello",
+      "answer": "Hello, how can I help you?"
+    },
+    {
+      "question": "I need help of something",
+      "answer": "What something? Please be more specific so I can assist you."
+    },
+    {
+      "question": "can you help me?",
+      "answer": "Sure, just tell me what kind of help"
+    },
+    {
+      "question": "Good morning",
+      "answer": "Hello, Good morning"
+    },
+    {
+      "question": "hello good afternoon mate",
+      "answer": "Good afternoon"
+    },
+    {
+      "question": "how's your day?",
+      "answer": "As your personal healthcare companion. Thank you for asking about my day. As an artificial intelligence, I don't experience emotions or have personal experiences, so I don't have a 'day' in the same way humans do. However, I am always ready and available to assist you with any health-related concerns or provide information you may need. How can I assist you today?"
+    },
+    {
+      "question": "Good day, mate",
+      "answer": "Good day to you too! How can I assist you today?"
+    },
+    {
+      "question": "bye",
+      "answer": "Goodbye! If you have any more questions in the future, feel free to ask. Have a great day!"
+    },
+    {
+      "question": "I mean WHO ARE YOU?",
+      "answer": "I'm Baymax, your healthcare assistant."
+    },
+    {
+      "question": "who",
+      "answer": "I'm Baymax, your healthcare assistant."
+    },
+    {
+      "question": "who are you?",
+      "answer": "I'm Baymax, your healthcare assistant."
+    },
+    {
+      "question": "who you are?",
+      "answer": "I'm Baymax, your healthcare assistant."
+    },
+    {
+      "question": "Ow",
+      "answer": "I was alerted to the need for medical attention when you said, Ow"
+    },
+    {
+      "question": "exit",
+      "answer": "& C:/Users/pc/AppData/Local/Programs/Python/Python311/python.exe f:/WORKS/project_baymax/main.py"
+    },
+    {
+      "question": "owwwwwwwwww",
+      "answer": "I was alerted to the need for medical attention when you said, Ow"
+    },
+    {
+      "question": "& C:/Users/pc/AppData/Local/Programs/Python/Python311/python.exe f:/WORKS/project_baymax/main.py",
+      "answer": "& C:/Users/pc/AppData/Local/Programs/Python/Python311/python.exe f:/WORKS/project_baymax/main.py"
+    },
+    {
+      "question": "OOWWWWWW",
+      "answer": "I was alerted to the need for medical attention when you said, Ow"
+    },
+    {
+      "question": "Cool",
+      "answer": "I'm Cool"
+    },
+    {
+      "question": "hi",
+      "answer": "hello"
+    },
+    {
+      "question": "secret",
+      "answer": "imo mama secret"
+    },
+    {
+      "question": "kaela ka aljane?",
+      "answer": "wala"
+    }
+  ]
+}
